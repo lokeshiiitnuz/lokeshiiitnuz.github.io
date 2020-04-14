@@ -11,7 +11,11 @@
 //   document.getElementById("flex-box-result").appendChild(h1);
 // }
 function ageInDays() {
-  var birthYear = prompt("Please mention Your DOB in MM/DD/YYYY:");
+  var birthYear = prompt("Please mention Your DOB in DD/MM/YYYY:");
+  var a = birthYear.slice(3, 5);
+  var b = birthYear.slice(0, 2);
+  var c = birthYear.slice(6, 11);
+  birthYear = a + "/" + b + "/" + c;
   const date1 = new Date(birthYear);
   const date2 = new Date();
   const diffTime = Math.abs(date2 - date1);
@@ -26,7 +30,7 @@ function ageInDays() {
 }
 
 function reset() {
-  document.getElementById("ageInDays").remove();
+  document.getElementById("diffDays").remove();
 }
 
 function generateCat() {
