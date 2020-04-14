@@ -1,12 +1,26 @@
-function ageInDays() {
-  var birthYear = prompt("What year are you born");
+// function ageInDays() {
+//   var birthYear = prompt("What year are you born");
 
-  var ageInDayss = (2020 - birthYear) * 365;
+//   var ageInDayss = (2020 - birthYear) * 365;
+//   var h1 = document.createElement("h1");
+//   var textAnswer = document.createTextNode(
+//     "You are " + ageInDayss + " days old."
+//   );
+//   h1.setAttribute("id", "ageInDays");
+//   h1.appendChild(textAnswer);
+//   document.getElementById("flex-box-result").appendChild(h1);
+// }
+function ageInDays() {
+  var birthYear = prompt("Please mention Your DOB in MM/DD/YYYY:");
+  const date1 = new Date(birthYear);
+  const date2 = new Date();
+  const diffTime = Math.abs(date2 - date1);
+  const diffDays = Math.floor(diffTime / (1000 * 60 * 60 * 24));
   var h1 = document.createElement("h1");
   var textAnswer = document.createTextNode(
-    "You are " + ageInDayss + " days old."
+    "You are " + diffDays + " days old."
   );
-  h1.setAttribute("id", "ageInDays");
+  h1.setAttribute("id", "diffDays");
   h1.appendChild(textAnswer);
   document.getElementById("flex-box-result").appendChild(h1);
 }
