@@ -509,4 +509,8 @@ form:hover .form-button {
   .footer-div {
     margin: 30px 0 !important;
   }
+  .droplist .nav-link {
+    color: black !important;
+    background: rgba(1, 168, 255, 0.3);
+  }
 }
