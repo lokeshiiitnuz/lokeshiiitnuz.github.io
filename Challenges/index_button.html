@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Javascript on Steroids</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+    />
+    <link rel="stylesheet" href="./static/css/style.css" />
+  </head>
+  <body>
+    <div class="container-4">
+      <h1 id="change-my-color">Challenge 4: Change the Color of All Buttons</h1>
+      <div class="flex-box-pick-color">
+        <form action="">
+          <select
+            name="backdrop"
+            id="background"
+            onchange="buttonColorChange(this)"
+          >
+            <option value="random">Random</option>
+            <option value="red">Red</option>
+            <option value="green">Green</option>
+            <option value="reset">Reset</option>
+          </select>
+        </form>
+        <button class="btn btn-primary">Wee!</button>
+        <button class="btn btn-danger">
+          <a
+            href="https://in.yahoo.com/?p=us"
+            target="_blank"
+            style="color: white; text-decoration: none;"
+            >Yahoo!</a
+          >
+        </button>
+        <button class="btn btn-warning">
+          <a
+            href="https://www.google.com/"
+            target="_blank"
+            style="color: white; text-decoration: none;"
+            >Google!</a
+          >
+        </button>
+        <button class="btn btn-success">
+          <a
+            href="https://www.facebook.com/"
+            target="_blank"
+            style="color: white; text-decoration: none;"
+            >Facebook!</a
+          >
+        </button>
+      </div>
+    </div>
+    <script src="./static/js/script.js"></script>
+  </body>
+</html>
