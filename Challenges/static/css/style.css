@@ -1,16 +1,24 @@
+body {
+  height: 100%;
+  background: linear-gradient(rgba(1, 168, 255, 0.5), rgba(1, 168, 255, 1));
+}
+.base-body {
+  height: 100vh;
+}
+
 .container-1,
 .container-3,
 .container-4,
 .container-5 {
-  border: 1px solid blue;
   width: 75%;
   margin: 0 auto;
   text-align: center;
+  height: 100vh;
 }
 
 .flex-box-container-1 {
   display: flex;
-  border: 1px solid green;
+  border: 1px solid black;
   padding: 10px;
   flex-wrap: wrap;
   flex-direction: row;

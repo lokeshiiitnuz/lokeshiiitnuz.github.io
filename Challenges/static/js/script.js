@@ -9,9 +9,15 @@ function ageInDays() {
   const diffTime = Math.abs(date2 - date1);
   const diffDays = Math.floor(diffTime / (1000 * 60 * 60 * 24));
   var h1 = document.createElement("h1");
+  var yeara = Math.floor(diffDays / 365);
   var textAnswer = document.createTextNode(
-    "You are " + diffDays + " days old."
+    "You are " +
+      diffDays +
+      " days old. And you have lived " +
+      yeara +
+      " years so far..!!"
   );
+
   h1.setAttribute("id", "diffDays");
   h1.appendChild(textAnswer);
   document.getElementById("flex-box-result").appendChild(h1);
