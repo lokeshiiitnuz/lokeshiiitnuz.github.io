@@ -58,6 +58,14 @@
   flex: 1;
   text-align: center;
   height: 350px;
+  overflow: hidden;
+  overflow-y: auto;
+}
+
+.flex-blackjack-row-1 img {
+  width: 25%;
+  height: 50%;
+  padding: 10px;
 }
 
 .flex-box-container-2 div {
@@ -91,4 +99,12 @@ th,
 td {
   padding: 5px;
   border: 1px solid black;
+}
+
+@media (max-width: 768px) {
+  .flex-blackjack-row-1 img {
+    width: 80%;
+    height: 30%;
+    padding: 10px;
+  }
 }

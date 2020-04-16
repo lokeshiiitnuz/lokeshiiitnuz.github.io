@@ -513,4 +513,7 @@ form:hover .form-button {
     color: black !important;
     background: rgba(1, 168, 255, 0.3);
   }
+  .mview {
+    flex-direction: column !important;
+  }
 }
