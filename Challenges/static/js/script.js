@@ -199,6 +199,7 @@ let blackjackGame = {
   draws: 0,
   isStand: false,
   turnsOver: false,
+  x: 0,
 };
 
 const YOU = blackjackGame["you"];
@@ -321,13 +322,16 @@ function computeWinner() {
       blackjackGame["losses"]++;
       winner = DEALER;
     }
-  } else if (YOU["score"] === DEALER["score"]) {
+  } else if (YOU["score"] == DEALER["score"]) {
     blackjackGame["draws"]++;
+    winner = "draw";
+    console.log("drq");
   } else if (YOU["score"] > 21 && DEALER["score"] <= 21) {
     blackjackGame["losses"]++;
     winner = DEALER;
   } else if (YOU["score"] > 21 && DEALER["score"] > 21) {
     blackjackGame["draws"]++;
+    winner = "draw";
   }
 
   return winner;
@@ -346,12 +350,36 @@ function showResult(winner) {
       message = "You lost!!";
       messageColor = "red";
       lossSound.play();
-    } else {
+    } else if (winner == "draw") {
       document.querySelector("#draws").textContent = blackjackGame["draws"];
       message = "You drew!!";
       messageColor = "black";
     }
     document.querySelector("#blackjack-result").textContent = message;
     document.querySelector("#blackjack-result").style.color = messageColor;
+  }
+  if (
+    blackjackGame["wins"] + blackjackGame["losses"] + blackjackGame["draws"] ==
+    7
+  ) {
+    if (blackjackGame["wins"] > blackjackGame["losses"]) {
+      message = "You won the tournement...! congratulations";
+      messageColor = "green";
+    } else if (blackjackGame["wins"] < blackjackGame["losses"]) {
+      message = "Ooops! You have lost the tournement...! Try again";
+      messageColor = "red";
+    } else {
+      message = "Well..!!. You have managed a draw";
+      messageColor = "black";
+    }
+
+    document.querySelector("#blackjack-result").textContent = message;
+    document.querySelector("#blackjack-result").style.color = messageColor;
+    blackjackGame["wins"] = 0;
+    blackjackGame["losses"] = 0;
+    blackjackGame["draws"] = 0;
+    document.querySelector("#wins").textContent = blackjackGame["wins"];
+    document.querySelector("#losses").textContent = blackjackGame["losses"];
+    document.querySelector("#draws").textContent = blackjackGame["draws"];
   }
 }
